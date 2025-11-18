@@ -1,0 +1,205 @@
+:root {
+  --clr-purple-50: hsl(260, 100%, 95%);
+  --clr-purple-300: hsl(264, 82%, 80%);
+  --clr-purple-500: hsl(263, 55%, 52%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-grey-100: hsl(214, 17%, 92%);
+  --clr-grey-200: hsl(0, 0%, 81%);
+  --clr-grey-400: hsl(224, 10%, 45%);
+  --clr-grey-500: hsl(217, 19%, 35%);
+  --clr-blue-dark: hsl(219, 29%, 14%);
+  --clr-black: hsl(0, 0%, 7%);
+
+  font-size: 13px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--clr-grey-100);
+  color: var(--clr-grey-500);
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.testimonials {
+  width: 100%;
+  padding: 4rem 1.5rem 2rem;
+}
+
+.testimonials__grid {
+  max-width: 1110px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--clr-white);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 1.5rem 2.5rem rgba(17, 23, 41, 0.15);
+  color: var(--clr-grey-400);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2rem 3rem rgba(17, 23, 41, 0.2);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.card__name {
+  font-weight: 600;
+  margin: 0;
+  color: inherit;
+}
+
+.card__role {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.card__title {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+  color: inherit;
+}
+
+.card__quote {
+  margin: 0;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.card--violet {
+  background: var(--clr-purple-500);
+  color: hsla(0, 0%, 100%, 0.95);
+}
+
+.card--quote {
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 2rem;
+}
+
+.card--grey {
+  background-color: var(--clr-grey-500);
+  color: var(--clr-white);
+}
+
+.card--dark {
+  background-color: var(--clr-blue-dark);
+  color: var(--clr-white);
+}
+
+.card--white {
+  background-color: var(--clr-white);
+  color: var(--clr-grey-500);
+}
+
+.card--white .card__quote {
+  color: var(--clr-grey-400);
+}
+
+.card--kira,
+.card--jeanette {
+  box-shadow: 0 1.5rem 2rem rgba(17, 23, 41, 0.1);
+}
+
+.attribution {
+  font-size: 0.75rem;
+  text-align: center;
+  color: var(--clr-grey-400);
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.attribution a {
+  color: var(--clr-purple-500);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 700px) {
+  .testimonials {
+    padding: 5rem 2rem 3rem;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card--daniel {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+
+  .card--jonathan {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .card--kira {
+    grid-column: 4;
+    grid-row: 1 / span 2;
+  }
+
+  .card--jeanette {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .card--patrick {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 699px) {
+  .card__title {
+    font-size: 1.2rem;
+  }
+}
+
